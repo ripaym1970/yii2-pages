@@ -25,4 +25,8 @@ if (!empty($model->meta_keywords)) {
 
 <div class="clearfix"></div>
 
-<?= $model->content; ?>
+<main class="container">
+    <div class="dzyga-main" role="main">
+        <?= $model->content; ?>
+    </div>
+</main>
