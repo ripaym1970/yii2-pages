@@ -58,9 +58,11 @@ echo $form->field($model, 'meta_keywords')->textInput(['maxlength' => 200]);
 
 echo $form->field($model, 'meta_description')->textInput(['maxlength' => 160]);
 ?>
+
 <div class="form-group">
     <?= Html::submitButton($model->isNewRecord ? Module::t('CREATE') : Module::t('UPDATE'), [
         'class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary',
     ]); ?>
 </div>
+
 <?php ActiveForm::end(); ?>

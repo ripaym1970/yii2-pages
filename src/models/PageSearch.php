@@ -21,6 +21,7 @@ class PageSearch extends Page
     {
         $behaviors = parent::behaviors();
         unset($behaviors['sluggable']);
+
         return $behaviors;
     }
 

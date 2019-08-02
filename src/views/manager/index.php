@@ -11,13 +11,16 @@ use bupy7\pages\models\Page;
 
 $this->title = Module::t('MODULE_NAME');
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
+
 <div class="page-header">
     <h1><?= Html::encode($this->title) ?></h1>
 </div>
 <p>
     <?= Html::a(Module::t('CREATE'), ['create'], ['class' => 'btn btn-success']); ?>
 </p>
+
 <?= GridView::widget([
     'tableOptions' => [
         'class' => 'table table-striped',
@@ -25,12 +28,28 @@ $this->params['breadcrumbs'][] = $this->title;
     'dataProvider' => $dataProvider,
     'filterModel' => $searchModel,
     'columns' => [
+        [
+            'class' => 'yii\grid\ActionColumn',
+            'template' => "{update}",
+        ],
         ['class' => 'yii\grid\SerialColumn'],
-        'id',
+        [
+            'attribute' => 'id',
+            'headerOptions' => ['style' => 'min-width:35px;width:35px;', ],
+            'contentOptions' => ['align' => 'right', ],
+        ],
         'title',
         'alias',
-        'created_at:datetime',
-        'updated_at:datetime',
+        [
+            'attribute' => 'created_at',
+            'format' => ['date', 'php:d.m.Y H:i'],
+            'headerOptions' => ['style' => 'min-width:130px', ],
+        ],
+        [
+            'attribute' => 'updated_at',
+            'format' => ['date', 'php:d.m.Y H:i'],
+            'headerOptions' => ['style' => 'min-width:130px', ],
+        ],
         [
             'attribute' => 'published',
             'filter' => Page::publishedDropDownList(),
@@ -40,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         [
             'class' => 'yii\grid\ActionColumn',
-            'template' => "{update}\n{delete}",
+            'template' => "{delete}",
         ],
     ],
 ]); ?>

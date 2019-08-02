@@ -81,20 +81,19 @@ class Page extends ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
-            'id' => Module::t('ID'),
-            'title' => Module::t('TITLE'),
-            'display_title' => Module::t('DISPLAY_TITLE'),
-            'alias' => Module::t('ALIAS'),
-            'published' => Module::t('PUBLISHED'),
-            'content' => Module::t('CONTENT'),
-            'title_browser' => Module::t('TITLE_BROWSER'),
-            'meta_keywords' => Module::t('META_KEYWORDS'),
+            'id'               => Module::t('ID'),
+            'title'            => Module::t('TITLE'),
+            'display_title'    => Module::t('DISPLAY_TITLE'),
+            'alias'            => Module::t('ALIAS'),
+            'published'        => Module::t('PUBLISHED'),
+            'content'          => Module::t('CONTENT'),
+            'title_browser'    => Module::t('TITLE_BROWSER'),
+            'meta_keywords'    => Module::t('META_KEYWORDS'),
             'meta_description' => Module::t('META_DESCRIPTION'),
-            'created_at' => Module::t('CREATED_AT'),
-            'updated_at' => Module::t('UPDATED_AT'),
+            'created_at'       => Module::t('CREATED_AT'),
+            'updated_at'       => Module::t('UPDATED_AT'),
         ];
     }
     
