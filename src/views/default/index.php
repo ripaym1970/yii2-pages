@@ -17,11 +17,11 @@ if (!empty($model->meta_keywords)) {
 }
 ?>
 
-<?php if ($model->display_title) : ?>
-    <div class="page-header">
-        <h1><?= Html::encode($model->title); ?></h1>
-    </div>
-<?php endif; ?>
+<?php
+if ($model->display_title) : ?>
+    <h1><?= Html::encode($model->title); ?></h1>
+<?php
+endif; ?>
 
 <div class="clearfix"></div>
 
