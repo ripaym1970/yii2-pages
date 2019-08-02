@@ -17,16 +17,18 @@ if (!empty($model->meta_keywords)) {
 }
 ?>
 
-<?php
-if ($model->display_title) : ?>
-    <h1><?= Html::encode($model->title); ?></h1>
-<?php
-endif; ?>
-
 <div class="clearfix"></div>
 
 <main class="container">
     <div class="dzyga-main" role="main">
-        <?= $model->content; ?>
+        <section class="reviews-wrapper">
+            <?php
+            if ($model->display_title) { ?>
+                <h5 class="title-wrapper"><?= Html::encode($model->title); ?></h5>
+            <?php
+            } ?>
+
+            <?= $model->content; ?>
+        </section>
     </div>
 </main>
